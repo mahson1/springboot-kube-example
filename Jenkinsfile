@@ -5,12 +5,12 @@ node {
         git credentialsId: 'GIT_CREDENTIALS', url: 'https://github.com/mahson1/springboot-kube-example.git', branch: 'main'
     }
     stage('Compile stage') {
-                bat "mvn -B -DskipTests clean package" 
+                sh "mvn -B -DskipTests clean package" 
         
     }
 
     stage('testing stage') {
-                bat "mvn test"
+                sh "mvn test"
         
     }
 
