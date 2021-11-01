@@ -1,8 +1,7 @@
-FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=build/libs/*.jar
-COPY ${JAR_FILE} app.jar
-
-RUN mkdir destination-dir-for-add
-ADD sample.tar.gz /destination-dir-for-add
-
-ENTRYPOINT ["java","-jar","/app.jar"]
+FROM openjdk:8-jre-alpine3.9
+ 
+# copy the packaged jar file into our docker image
+COPY target/demo-0.0.1-SNAPSHOT.jar /demo.jar
+ 
+# set the startup command to execute the jar
+CMD ["java", "-jar", "/demo.jar"]
