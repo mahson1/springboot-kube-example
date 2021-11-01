@@ -8,10 +8,16 @@ node {
   }
   
   stage("Docker build"){
-        sh "/Users/apple/Library/Group Containers/group.com.docker/bin/docker version"
-        sh "/Users/apple/Library/Group Containers/group.com.docker/bin/docker build -t demo-0.0.1-SNAPSHOT.jar ."
-        sh "/Users/apple/Library/Group Containers/group.com.docker/bin/docker image list"
-        sh "/Users/apple/Library/Group Containers/group.com.docker/bin/docker tag jhooq-docker-demo mahson87/demo-0.0.1-SNAPSHOT.jar:demo-0.0.1-SNAPSHOT.jar"
+        sh """
+          /Users/apple/Library/Group Containers/group.com.docker/bin/docker version
+          """
+        sh """
+        /Users/apple/Library/Group Containers/group.com.docker/bin/docker build -t demo-0.0.1-SNAPSHOT.jar .
+        """
+        sh """/Users/apple/Library/Group Containers/group.com.docker/bin/docker image list
+        """
+        sh """/Users/apple/Library/Group Containers/group.com.docker/bin/docker tag jhooq-docker-demo mahson87/demo-0.0.1-SNAPSHOT.jar:demo-0.0.1-SNAPSHOT.jar
+        """
     } 
 }
 
