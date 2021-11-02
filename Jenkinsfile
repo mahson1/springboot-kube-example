@@ -18,7 +18,7 @@ node {
         /usr/local/bin/docker image list
         """
         sh """
-        /usr/local/bin/docker tag jhooq-docker-demo mahson87/demo-0.0.1-SNAPSHOT.jar:demo-0.0.1-SNAPSHOT.jar
+        /usr/local/bin/docker tag jhooq-docker-demo mahson87/demo-0.0.1-snapshot.jar:demo-0.0.1-snapshot.jar
         """
     } 
 }
