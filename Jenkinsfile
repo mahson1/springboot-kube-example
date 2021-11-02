@@ -21,5 +21,8 @@ node {
         /usr/local/bin/docker tag demo-0.0.1-snapshot.jar mahson87/demo-0.0.1-snapshot:demo-0.0.1-snapshot
         """
     } 
+  stage("Push Image to Docker Hub"){
+        sh 'docker push  mahson87/demo-0.0.1-snapshot:demo-0.0.1-snapshot'
+    }
 }
 
