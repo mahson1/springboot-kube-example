@@ -12,7 +12,7 @@ node {
           /usr/local/bin/docker version
           """
         sh """
-        /usr/local/bin/docker build -t demo-0.0.1-SNAPSHOT.jar .
+        /usr/local/bin/docker build -t demo-0.0.1-snapshot.jar .
         """
         sh """
         /usr/local/bin/docker image list
