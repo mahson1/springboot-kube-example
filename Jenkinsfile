@@ -18,7 +18,7 @@ node {
         /usr/local/bin/docker image list
         """
         sh """
-        /usr/local/bin/docker tag demo-0.0.1-snapshot.jar mahson87/demo-0.0.1-snapshot.jar:demo-0.0.1-snapshot.jar
+        /usr/local/bin/docker tag demo-0.0.1-snapshot.jar mahson87/demo-0.0.1-snapshot:demo-0.0.1-snapshot
         """
     } 
 }
