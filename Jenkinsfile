@@ -12,13 +12,13 @@ node {
           /usr/local/bin/docker version
           """
         sh """
-        /usr/local/bin/docker build -t demo-0.0.1-snapshot.jar .
+        /usr/local/bin/docker build -t demo-0.0.2-snapshot.jar .
         """
         sh """
         /usr/local/bin/docker image list
         """
         sh """
-        /usr/local/bin/docker tag demo-0.0.1-snapshot.jar mahson87/demo-0.0.1-snapshot:demo-0.0.1-snapshot
+        /usr/local/bin/docker tag demo-0.0.2-snapshot.jar mahson87/demo-0.0.2-snapshot:demo-0.0.2-snapshot
         """
     }
   
@@ -28,7 +28,7 @@ node {
         }
     } 
   stage("Push Image to Docker Hub"){
-        sh '/usr/local/bin/docker push  mahson87/demo-0.0.1-snapshot:demo-0.0.1-snapshot'
+        sh '/usr/local/bin/docker push  mahson87/demo-0.0.2-snapshot:demo-0.0.2-snapshot'
     }
 }
 
