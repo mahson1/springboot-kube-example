@@ -29,6 +29,7 @@ node {
     }
   stage("print path variable"){
         withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
+            sh 'PATH=$PATH:/usr/local/bin'
             sh 'echo $PATH'
         }
     } 
