@@ -27,7 +27,12 @@ node {
         /usr/local/bin/docker tag demo-0.0.2-snapshot.jar mahson87/demo-0.0.2-snapshot:demo-0.0.2-snapshot
         """
     }
-  
+  stage("print path variable"){
+        withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
+            sh 'echo $PATH'
+        }
+    } 
+    
   stage("Docker Login"){
         withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
             sh '/usr/local/bin/docker login -u mahson87 -p $PASSWORD'
