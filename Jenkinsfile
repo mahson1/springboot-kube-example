@@ -29,15 +29,15 @@ node {
     }
   stage("print path variable"){
         withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
-            sh 'export PATH=$PATH:/usr/local/bin'
+            ###sh 'export PATH=$PATH:/usr/local/bin'
             sh 'echo $PATH'
         }
     } 
     
   stage("Docker Login"){
         withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
-            sh 'export PATH=$PATH:/usr/local/bin'
-            sh 'echo $PATH'
+            ##sh 'export PATH=$PATH:/usr/local/bin'
+            ##sh 'echo $PATH'
             sh '/usr/local/bin/docker login -u mahson87 -p $PASSWORD'
         }
     } 
