@@ -1,6 +1,6 @@
 pipeline { 
     environment {
-        registry = "YourDockerhubAccount/YourRepository"
+        registry = "mahson87/demo-0.0.2-snapshot"
         registryCredential = 'dockerhub_id'
         dockerImage = '' 
     }
@@ -14,14 +14,14 @@ pipeline {
         stage('Building our image') {
             steps {
                 script {
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    dockerImage = /usr/local/bin/docker.build registry + ":$BUILD_NUMBER"
                 }
             }
         }
         stage('Deploy our image') { 
             steps {
                 script {
-                    docker.withRegistry( '', registryCredential ) { 
+                    /usr/local/bin/docker.withRegistry( '', registryCredential ) { 
                         dockerImage.push()
                     }
                 } 
@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Cleaning up') {
             steps {
-                sh "docker rmi $registry:$BUILD_NUMBER" 
+                sh "/usr/local/bin/docker rmi $registry:$BUILD_NUMBER" 
             }
         }
     }
