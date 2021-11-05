@@ -1,11 +1,4 @@
 node {
-  
-  
-    environment { 
-        registry = "mahson87/demo-0.0.2-snapshot" 
-        registryCredential = 'DOCKER_HUB_CREDS' 
-        dockerImage = ''
-    }
   stage ('Build') {
     git credentialsId: 'GIT_CREDENTIALS', url: 'https://github.com/mahson1/springboot-kube-example.git', branch: 'main'
     def mvn_version = 'Maven'
