@@ -1,4 +1,4 @@
-@Library('service_workflow_library') _
+@Library('service_workflow_library@master') _
 
 node {
 
