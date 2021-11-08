@@ -1,14 +1,6 @@
 @Library('service_workflow_library@master') _
 
 pipeline {
-
-
-    environment { 
-        registry = "mahson87/demo-0.0.2-snapshot" 
-        registryCredential = 'dockerhub_id' 
-        dockerImage = '' 
-    }
-
   agent {
     kubernetes {
       yaml '''
@@ -25,27 +17,21 @@ pipeline {
     }
   }
   stages {
-
-
-    stage(‘build’ over jnlp agent) {
-
+    stage(build over jnlp agent) {
       steps {
         container('jnlp') {
           sh 'mvn -version'
       }
     }
-
       steps {
         container('jnlp') {
     		git credentialsId: 'GIT_CREDENTIALS', url: 'https://github.com/mahson1/springboot-kube-example.git', branch: 'main'
-   	 	def mvn_version = 'Maven'
+   	 	    def mvn_version = 'Maven'
     		withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
      			sh "mvn clean package"
     		}// withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
       }
     }
-
-
   }
 
 
