@@ -17,7 +17,7 @@ pipeline {
     }
   }
   stages {
-    stage(build over jnlp agent) {
+    stage('build over jnlp agent') {
       steps {
         container('jnlp') {
           sh 'mvn -version'
