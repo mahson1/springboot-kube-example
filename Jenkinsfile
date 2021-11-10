@@ -4,15 +4,14 @@ pipeline {
       yaml '''
     apiVersion: v1
     kind: Pod
+    metadata:
+      name: sprintboot-test-jnlp
     spec:
       containers:
-      - name: maven
-        image: jenkins/inbound-agent:latest
-        command:
-        - sleep
-        args:
-        - 99d
-	'''
+      - name: jnlp
+        image: jenkins/inbound-agent:4.3-4-jdk11
+        command: ["sleep", "10000"]
+    '''
     }
   }
   stages {
