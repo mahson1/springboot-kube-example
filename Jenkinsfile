@@ -7,7 +7,7 @@ pipeline {
         spec:
           containers:
           - name: maven
-            image: cloudbees/jnlp-slave-with-java-build-tools:latest
+            image: mahson87/jenkins-agent:latest
             command:
             - cat
             tty: true
