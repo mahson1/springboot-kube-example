@@ -12,7 +12,7 @@ pipeline {
             - cat
             tty: true
           - name: docker
-            image: docker
+            image: mahson87/docker-alpine:latest
             command:
             - cat
             tty: true	    
