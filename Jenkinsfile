@@ -7,7 +7,7 @@ pipeline {
     spec:
       containers:
       - name: maven
-        image: jenkins/inbound-agent
+        image: jenkins/inbound-agent:latest
         command:
         - sleep
         args:
