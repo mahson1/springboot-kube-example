@@ -11,6 +11,11 @@ pipeline {
             command:
             - cat
             tty: true
+          - name: docker
+            image: docker
+            command:
+            - cat
+            tty: true	    
         '''
     }
   }
@@ -27,7 +32,7 @@ pipeline {
 
    stage('BUILD DOCKER IMANGE AND PUSH') {
       steps {
-        container('maven') {
+        container('docker') {
 	 sh """
           docker version
           """
