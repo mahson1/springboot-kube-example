@@ -19,7 +19,7 @@ pipeline {
 	  
     stage('Run maven') {
       steps {
-        container('maven') {
+        container('jnlp') {
 	sh "mvn clean package"
         }
       }
