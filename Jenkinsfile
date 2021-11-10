@@ -5,14 +5,13 @@ pipeline {
     apiVersion: v1
     kind: Pod
     metadata:
-      name: sprintboot-test-jnlp
+      name: andreas-test
     spec:
       containers:
       - name: jnlp
         image: jenkins/inbound-agent:4.3-4-jdk11
-	command:
-            - cat
-        tty: true
+        command: ["cat"]
+	tty: yes
     '''
     }
   }
