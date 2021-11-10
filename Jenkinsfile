@@ -7,7 +7,7 @@ pipeline {
         spec:
           containers:
           - name: maven
-            image: mahson87/jenkins-agent:1.1
+            image: mahson87/jenkins-agent:1.2
             command:
             - cat
             tty: true
