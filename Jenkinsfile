@@ -20,7 +20,7 @@ pipeline {
       steps {
 
         container('maven') {
-		    git credentialsId: 'GIT_CREDENTIALS', url: 'https://github.com/mahson1/springboot-kube-example.git', branch: 'main'
+		    //git credentialsId: 'GIT_CREDENTIALS', url: 'https://github.com/mahson1/springboot-kube-example.git', branch: 'main'
     		   //def mvn_version = 'Maven'
  		   //withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
 		    sh "mvn clean package"
