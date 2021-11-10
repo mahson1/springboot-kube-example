@@ -7,7 +7,7 @@ pipeline {
         spec:
           containers:
           - name: jnlp
-            image: mahson87/jenkins-agent:latest
+            image: mahson87/jenkins-agent:1.0
             command:
             - cat
             tty: true
