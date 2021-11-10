@@ -7,7 +7,7 @@ pipeline {
         spec:
           containers:
           - name: maven
-            image: maven:alpine
+            image: jenkins/jnlp-agent-docker:latest
             command:
             - cat
             tty: true
