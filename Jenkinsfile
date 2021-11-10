@@ -6,7 +6,7 @@ pipeline {
         kind: Pod
         spec:
           containers:
-          - name: jnlp
+          - name: maven
             image: mahson87/jenkins-agent:1.1
             command:
             - cat
@@ -19,7 +19,7 @@ pipeline {
 	  
     stage('Run maven') {
       steps {
-        container('jnlp') {
+        container('maven') {
 	sh "mvn clean package"
         }
       }
@@ -27,7 +27,7 @@ pipeline {
 
    stage('BUILD DOCKER IMANGE AND PUSH') {
       steps {
-        container('jnlp') {
+        container('maven') {
 	 sh """
           docker version
           """
