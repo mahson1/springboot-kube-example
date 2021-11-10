@@ -25,7 +25,24 @@ pipeline {
       }
     }
 
-
+   stage('BUILD DOCKER IMANGE AND PUSH') {
+      steps {
+        container('maven') {
+	 sh """
+          docker version
+          """
+        sh """
+        docker build -t demo-0.0.2-snapshot.jar .
+        """
+        sh """
+        docker image list
+        """
+        sh """
+        docker tag demo-0.0.2-snapshot.jar mahson87/demo-0.0.2-snapshot:demo-0.0.2-snapshot
+        """
+        }
+      }
+    }
 
 
   }
