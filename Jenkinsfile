@@ -11,8 +11,8 @@ pipeline {
             command:
             - cat
             tty: true
-          - name: docker
-            image: mahson87/docker-alpine:latest
+          - name: jnlp
+            image: jenkins/jnlp-agent-docker
             command:
             - cat
             tty: true	    
@@ -32,7 +32,7 @@ pipeline {
 
    stage('BUILD DOCKER IMANGE AND PUSH') {
       steps {
-        container('docker') {
+        container('jnlp') {
 	 sh """
           docker version
           """
