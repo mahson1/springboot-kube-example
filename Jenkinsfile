@@ -7,7 +7,7 @@ pipeline {
         spec:
           containers:
           - name: maven
-            image: jenkins/inbound-agent:latest
+            image: jenkins/inbound-agent:4.3-4
             command:
             - cat
             tty: true
